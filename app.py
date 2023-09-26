@@ -1,5 +1,6 @@
 import streamlit as st
 import openai
+import numpy as np
 openai.organization = "org-T8IGZCF6EmGEh8fDpMKtVdYI"
 openai.api_key = "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"
 
