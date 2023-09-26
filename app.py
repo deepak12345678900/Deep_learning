@@ -56,6 +56,7 @@ if uploaded_file:
         st.title(f'Predicted plant name is : {plant_name} ')
         messages = [ {"role": "system", "content": "You are a intelligent assistant."} ]
 
+
         message = f"Describe {plant_name} uses and their Geographical locations in india"
         if message:
             messages.append(
