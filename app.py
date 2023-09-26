@@ -36,7 +36,7 @@ if uploaded_file:
         img = Image.open(uploaded_file)
         img = img.resize((256, 256))
         img = np.array(img) / 255.0
-        model = tf.keras.models.load_model('MobileNetV2Model.h5')  # Load the model
+        model = tf.keras.models.load_model('MobileNetV2Model.h5',compile=False)  # Load the model
         predictions = model.predict(np.expand_dims(img, axis=0))
         predicted_class_index = np.argmax(predictions)
         predicted_plant = items[predicted_class_index]
