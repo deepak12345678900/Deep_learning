@@ -21,8 +21,12 @@ if uploaded_file:
         predicted_class = np.argmax(predictions)
         confidence = predictions[0][predicted_class]
 
-        class_name = "Elephant" if confidence < 0.50 else "Tiger"
-        
+        # class_name = "Elephant" if confidence < 0.50 else "Tiger"
+        if confidence<=0.3:class_name = "Elephant"
+        elif confidence>=0.7:
+            class_name="Tiger"
+        else:
+            class_name="Not yet trained on this class"
         st.title("Prediction:")
         st.header(f"Predicted class: {class_name}")
         st.snow()
