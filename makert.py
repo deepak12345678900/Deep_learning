@@ -22,8 +22,8 @@ if uploaded_file:
         confidence = predictions[0][predicted_class]
 
         # class_name = "Elephant" if confidence < 0.50 else "Tiger"
-        if confidence==0:class_name = "Elephant"
-        elif confidence==1:
+        if confidence<=0.2:class_name = "Elephant"
+        elif confidence>=0.8:
             class_name="Tiger"
         else:
             class_name="Not yet trained on this class"
